@@ -1,0 +1,16 @@
+<ul  class="list-group" [ngStyle]="{backgroundcolor: getColor()}" 
+[ngClass]="{'list-group-item': true, 
+'list-group-item-success': this.postLikes > this.postUnlikes,
+'list-group-item-danger': this.postLikes < this.postUnlikes}">
+        <li>
+            <h4>{{postTitle}} </h4> 
+           <h5> {{postCreatedAt | date: 'short' }}</h5>
+            <p>{{postContenu}}</p>
+      </li>
+ </ul>
+
+ <div class="buttons">
+<button class="btn btn-success" (click)="onLike()">Love it {{postLikes}}</button>
+<p></p>
+<button class="btn btn-danger" (click)="onUnlike()">Don't love it {{postUnlikes}}</button>
+</div>
